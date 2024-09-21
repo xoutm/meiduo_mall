@@ -179,7 +179,7 @@ LOGGING = {
         'file': {
             'level': 'INFO',
             'class': 'logging.handlers.RotatingFileHandler',
-            'filename': os.path.join(os.path.dirname(BASE_DIR),  'logs/meiduo_mall.log'),
+            'filename': os.path.join(os.path.dirname(BASE_DIR),  'logs/meiduo.log'),
             'maxBytes': 1024 * 1024 * 5, 'backupCount': 5,
             'formatter': 'verbose',
         },
