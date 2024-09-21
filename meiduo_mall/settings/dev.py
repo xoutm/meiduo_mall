@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 import os
 from pathlib import Path
 
+from django.conf.global_settings import STATICFILES_DIRS
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -47,7 +49,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'meiduo_mall.urls'
+ROOT_URLCONF = 'urls'
 
 TEMPLATES = [
     {
@@ -151,7 +153,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-
+STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]
 # 配置日志
 LOGGING = {
     'version': 1,
@@ -179,7 +181,7 @@ LOGGING = {
         'file': {
             'level': 'INFO',
             'class': 'logging.handlers.RotatingFileHandler',
-            'filename': os.path.join(os.path.dirname(BASE_DIR),  'logs/meiduo_mall.log'),
+            'filename': os.path.join(os.path.dirname(BASE_DIR), 'logs/../logs/meiduo_mall.log'),
             'maxBytes': 1024 * 1024 * 5, 'backupCount': 5,
             'formatter': 'verbose',
         },
